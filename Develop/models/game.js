@@ -20,8 +20,8 @@ module.exports = function(sequelize, DataTypes) {
 
         rating: {
             type: DataTypes.ENUM,
-            values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            allowNull: false
+            values: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+           
         },
 
         wishlist: {
