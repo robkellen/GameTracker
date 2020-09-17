@@ -1,15 +1,19 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const exphbs = require("express-handlebars");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
+//requiring path
+const path = require("path");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -20,11 +24,15 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set Handlebars.
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// view engine setup
+app.set('view engine', '.handlebars');
+app.set('views', path.join(__dirname, 'views'));
+app.engine( '.handlebars', exphbs( {
+  extname: '.handlebars',
+  defaultView: 'main',
+  layoutsDir: path.join(__dirname, '/views/layouts/'),
+  partialsDir: path.join(__dirname, '/views/partials/')
+}));
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
