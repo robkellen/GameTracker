@@ -8,8 +8,8 @@ module.exports = function(app) {
       query.UserID = req.query.user_id;
     }
     db.Game.findAll({
-      // where: query,
-      // include: [db.User],
+      where: query,
+      include: [db.User],
     }).then(function(dbGame) {
       res.json(dbGame);
     });

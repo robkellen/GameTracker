@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
     Game.associate  = function(models){
       Game.belongsTo(models.User, {
         foreignKey: {
-          allowNull: false
+          // allowNull: false
         }
       })
     }
