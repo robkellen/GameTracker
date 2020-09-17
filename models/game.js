@@ -38,8 +38,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             default: false
         }, 
-      
+    });
 
-    })
+    Game.associate = function(models) {
+        Game.belongsTo(models.User, {
+            foreignKey: {
+                
+            }
+        });
+    }
     return Game;
     }
