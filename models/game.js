@@ -37,7 +37,8 @@ module.exports = function(sequelize, DataTypes) {
         beaten: {
             type: DataTypes.BOOLEAN,
             default: false
-        }
+        }, 
+      
 
     })
     return Game;
