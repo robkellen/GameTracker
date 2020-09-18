@@ -1,4 +1,22 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 5px;
+  color: chartreuse;
+  font-family: 'Lucida Sans' 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+html,
+body {
+  background-color: black;
+  color: chartreuse;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.black-back {
+  background-color: black;
+  color: chartreuse;
+  outline-width: 15%;
+  outline-style: double;
+  outline-color: chartreuse;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

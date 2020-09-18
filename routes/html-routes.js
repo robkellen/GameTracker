@@ -1,6 +1,3 @@
-// Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
-
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -10,8 +7,6 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
-
     // submitButtonLabel
     //   formName
     //   formClass
@@ -70,6 +65,41 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.render("membersIndex", {
+      layout: "members",
+      email: res.email,
+      linkUrl: "/logout",
+      linkLabel: "Logout",
+      formName: "Member Form",
+      formClass: "member",
+      addButtonLabel: "Add",
+      updateButtonLabel: "Update"
+    });
   });
+  //pass in the view name as well as the data to be rendered in the form of an object
+  app.get("/games", isAuthenticated, (req, res) => {
+    console.log("we are in /games!!!!!!!!");
+    res.render("gamesIndex", {
+      layout: "games",
+      srcScript: "games",
+      linkUrl: "/logout",
+      linkLabel: "Logout",
+      formName: "Add Form",
+      formClass: "add",
+      submitButtonLabel: "submit"
+    });
+  });
+
+  //pass in the view name as well as the data to be rendered in the form of an object
+  // app.get("/addUpdate.js", isAuthenticated, (req, res) => {
+  //   res.render("membersIndex", {
+  //     layout: "members",
+  //     memberName: "",
+  //     linkUrl: "/members",
+  //     linkLabel: "Member",
+  //     formName: "Update Form",
+  //     formClass: "update",
+  //     submitButtonLabel: "submit"
+  //   });
+  // });
 };
