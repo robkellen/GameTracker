@@ -70,8 +70,8 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
   Game.associate = function(models) {
-    Game.belongsToMany(models.Platform, {
-      through: "GamePlatform",
+    Game.belongsToMany(models.System, {
+      through: "GameSystem",
     });
   };
 
