@@ -77,12 +77,13 @@ module.exports = function(app) {
   });
   //games route
   //request is from the client
-  app.get("/games", isAuthenticated, (req, res) => {
+  app.get("/games-add", isAuthenticated, (req, res) => {
     //pass in the view name as well as the data to be rendered in the form of an object
     console.log("we are in /games!!!!!!!!");
     res.render("gamesIndex", {
       layout: "games",
-      srcScript: "games",
+      email: res.email,
+      srcScript: "Add",
       linkUrl: "/logout",
       linkLabel: "Logout",
       formName: "Add Form",
@@ -92,15 +93,15 @@ module.exports = function(app) {
   });
 
   //pass in the view name as well as the data to be rendered in the form of an object
-  // app.get("/addUpdate.js", isAuthenticated, (req, res) => {
-  //   res.render("membersIndex", {
-  //     layout: "members",
-  //     memberName: "",
-  //     linkUrl: "/members",
-  //     linkLabel: "Member",
-  //     formName: "Update Form",
-  //     formClass: "update",
-  //     submitButtonLabel: "submit"
-  //   });
-  // });
+  app.get("/games-update", isAuthenticated, (req, res) => {
+    res.render("gamesIndex", {
+      layout: "games",
+      email: res.email,
+      linkUrl: "/members",
+      linkLabel: "Member",
+      formName: "Update Form",
+      formClass: "update",
+      submitButtonLabel: "submit"
+    });
+  });
 };
