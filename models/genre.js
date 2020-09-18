@@ -8,7 +8,7 @@ module.exports = function(sequelize, dataTypes) {
   });
 
   Genre.associate = function(models) {
-    Genre.belongsToMany(models.Game, { through: "GameSystem" });
+    Genre.belongsToMany(models.Game, { through: "GameGenre" });
   };
 
   return Genre;
