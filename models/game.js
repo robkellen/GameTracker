@@ -5,21 +5,21 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
     },
-    genre: {
-      type: DataTypes.ENUM,
-      values: [
-        "Action",
-        "Adventure",
-        "Fighting",
-        "Platformer",
-        "Racing",
-        "RPG",
-        "Shooter",
-        "Sports",
-        "Strategy",
-        "Survival/Horror",
-      ],
-    },
+    // genre: {
+    //   type: DataTypes.ENUM,
+    //   values: [
+    //     "Action",
+    //     "Adventure",
+    //     "Fighting",
+    //     "Platformer",
+    //     "Racing",
+    //     "RPG",
+    //     "Shooter",
+    //     "Sports",
+    //     "Strategy",
+    //     "Survival/Horror",
+    //   ],
+    // },
     publisher: {
       type: DataTypes.STRING,
     },
@@ -63,6 +63,17 @@ module.exports = function(sequelize, DataTypes) {
       default: false,
     },
   });
+
+  Game.associate = function(models) {
+    Game.belongsToMany(models.Genre, {
+      through: "GameGenre",
+    });
+  };
+  Game.associate = function(models) {
+    Game.belongsToMany(models.Platform, {
+      through: "GamePlatform",
+    });
+  };
 
   Game.associate = function(models) {
     Game.belongsTo(models.User, {
