@@ -5,10 +5,15 @@ form.login {
   font-family: 'Lucida Sans' 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 }
 
+h2 {
+  background-color: black;
+  color: chartreuse;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 html,
 body {
   background-color: black;
-  color: chartreuse;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
