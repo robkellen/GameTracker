@@ -72,7 +72,17 @@ module.exports = function(app) {
       formName: "Member Form",
       formClass: "member",
       addButtonLabel: "Add",
-      updateButtonLabel: "Update"
+      updateButtonLabel: "Update",
+      games: res.games
+      // games: [
+      // title: "Genre",
+      // publisher: "Publisher",
+      // preference: "Preference",
+      // rating: "Rating",
+      // wishlist: "Wishlist",
+      // playing: "Playing",
+      // beaten: "Beaten"
+      // ]
     });
   });
   //games route
