@@ -1,21 +1,9 @@
-
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Halo 3", "Shooter", "Microsoft", "Xbox 360", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Horizon Zero Dawn", "Action", "Sony", "PC", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Persona 5", "RPG", "Atlus", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Pokemon Go", "RPG", "Niantic", "Android", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Star Wars: Jedi Fallen Order", "Adventure", "EA", "Xbox One", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("The Legend of Zelda: Breath of the Wild", "Adventure", "Nintendo", "Nintendo Switch", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("The Witcher 3: Wild Hunt", "Action", "CDProjekt red", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Uncharted 4: A Thief's End", "Adventure", "Sony", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
--- -- INSERT INTO users (email, password, createdAt, updatedAt)  VALUES ("thisisafakeemailaddress@email.com", "root", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
--- INSERT INTO genre (name)   VALUES ("Action"),
--- INSERT INTO genre (name)   VALUES ("Adventure"),
--- INSERT INTO genre (name)   VALUES ("Fighting"),
--- INSERT INTO genre (name)   VALUES ("Platformer"),
--- INSERT INTO genre (name)   VALUES ("Racing"),
--- INSERT INTO genre (name)   VALUES ("RPG"),
--- INSERT INTO genre (name)   VALUES ("Shooter"),
--- INSERT INTO genre (name)   VALUES ("Sport"),
--- INSERT INTO genre (name)   VALUES ("Strategy"),
--- INSERT INTO genre (name)   VALUES ("Survival Horror"),
--- INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Grand Theft Auto V", "Action", "Rockstar", "Xbox ONE", 9, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Grand Theft Auto V", "Action", "Rockstar", "Xbox ONE", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Halo 3", "Shooter", "Microsoft", "Xbox 360", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Horizon Zero Dawn", "Action", "Sony", "PC", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Persona 5", "RPG", "Atlus", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Pokemon Go", "RPG", "Niantic", "Android", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Star Wars: Jedi Fallen Order", "Adventure", "EA", "Xbox One", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("The Legend of Zelda: Breath of the Wild", "Adventure", "Nintendo", "Nintendo Switch", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("The Witcher 3: Wild Hunt", "Action", "CDProjekt red", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO games (title, genre, publisher, systemPreference, rating, createdAt, updatedAt) VALUES ("Uncharted 4: A Thief's End", "Adventure", "Sony", "Playstation 4", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

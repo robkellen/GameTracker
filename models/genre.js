@@ -1,15 +1,15 @@
-module.exports = function (sequelize, DataTypes) {
-    const Genre = sequelize.define("Genre", {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-    });
-    Genre.associate = function (models) {
-        System.belongsToMany(models.Game, {through: "GameSystem"});
-    };
-    return Genre;
+//create table for genre to export and associate the key/value in the Games table
+
+module.exports = function(sequelize, dataTypes) {
+  const Genre = sequelize.define("Genre", {
+    name: {
+      type: dataTypes.STRING,
+    },
+  });
+
+  Genre.associate = function(models) {
+    Genre.belongsToMany(models.Game, { through: "GameGenre" });
+  };
+
+  return Genre;
 };
-
-
-
