@@ -5,40 +5,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
     },
-    // genre: {
-    //   type: DataTypes.ENUM,
-    //   values: [
-    //     "Action",
-    //     "Adventure",
-    //     "Fighting",
-    //     "Platformer",
-    //     "Racing",
-    //     "RPG",
-    //     "Shooter",
-    //     "Sports",
-    //     "Strategy",
-    //     "Survival/Horror",
-    //   ],
-    // },
+    
     publisher: {
       type: DataTypes.STRING,
     },
-    systemPreference: {
-      type: DataTypes.ENUM,
-      values: [
-        "Android",
-        "iOS",
-        "MacOS",
-        "PC",
-        "Nintendo Switch",
-        "Nintendo Wii",
-        "Nintendo WiiU",
-        "Playstation 3",
-        "Playstation 4",
-        "Xbox ONE",
-        "XBOX 360",
-      ],
-    },
+  
 
     rating: {
       type: DataTypes.INTEGER,
@@ -58,29 +29,6 @@ module.exports = function(sequelize, DataTypes) {
       default: false,
     },
 
-<<<<<<< HEAD
-        beaten: {
-            type: DataTypes.BOOLEAN,
-            default: false
-        },
-    });
-
-    Game.associate = function (models) {
-        Game.belongsTo(models.User, {
-            foreignKey: {
-
-            }
-        });
-    },
-        Game.associate = function (models) {
-            Game.belongsToMany(models.System, { through: "GameSystem" });
-        },
-        Game.associate = function (models) {
-            Game.belongsToMany(models.Genre, { through: "GameGenre" });
-        }
-    return Game;
-}
-=======
     beaten: {
       type: DataTypes.BOOLEAN,
       default: false,
@@ -107,4 +55,3 @@ module.exports = function(sequelize, DataTypes) {
   };
   return Game;
 };
->>>>>>> cc3b59e65f0e037a7b3ba0dd5111983dbce4ef9e
