@@ -5,15 +5,6 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 });
-$(document).ready(function() {
-  $("#myTable").DataTable();
+$(document).ready(() => {
+  $("#table_id").DataTable();
 });
-
-
-
-
-
-
-
-
-
