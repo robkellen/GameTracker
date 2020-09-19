@@ -9,7 +9,7 @@ module.exports = function(app) {
     }
     db.Game.findAll({
       where: query,
-      include: [db.User],
+      include: [db.User,],
     }).then(function(dbGame) {
       res.json(dbGame);
     });

@@ -5,39 +5,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
     },
-    // genre: {
-    //   type: DataTypes.ENUM,
-    //   values: [
-    //     "Action",
-    //     "Adventure",
-    //     "Fighting",
-    //     "Platformer",
-    //     "Racing",
-    //     "RPG",
-    //     "Shooter",
-    //     "Sports",
-    //     "Strategy",
-    //     "Survival/Horror",
-    //   ],
-    // },
+
     publisher: {
       type: DataTypes.STRING,
-    },
-    systemPreference: {
-      type: DataTypes.ENUM,
-      values: [
-        "Android",
-        "iOS",
-        "MacOS",
-        "PC",
-        "Nintendo Switch",
-        "Nintendo Wii",
-        "Nintendo WiiU",
-        "Playstation 3",
-        "Playstation 4",
-        "Xbox ONE",
-        "XBOX 360",
-      ],
     },
 
     rating: {
