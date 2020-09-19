@@ -77,7 +77,7 @@ module.exports = function(app) {
   });
   //games route
   //request is from the client
-  app.get("/games-add", isAuthenticated, (req, res) => {
+  app.get("/games", isAuthenticated, (req, res) => {
     //pass in the view name as well as the data to be rendered in the form of an object
     console.log("we are in /games!!!!!!!!");
     res.render("gamesIndex", {

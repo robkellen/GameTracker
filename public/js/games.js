@@ -1,9 +1,9 @@
 function getGames() {
-  $.get("/api/games", function(response) {
+  $.get("/api/games", response => {
     console.log(response);
   });
 }
 
 $(document).ready(() => {
-    getGames();
+  getGames();
 });
