@@ -1,6 +1,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-
+const http = require("http");
 //home route
 //request is from the client
 module.exports = function(app) {
@@ -19,7 +19,7 @@ module.exports = function(app) {
       linkLabel: "Sign-up",
       formName: "Login Form",
       formClass: "login",
-      submitButtonLabel: "Login"
+      submitButtonLabel: "Login",
     });
   });
   // Login Route and also an home route
@@ -37,7 +37,7 @@ module.exports = function(app) {
       linkLabel: "Sign-up",
       formName: "Login Form",
       formClass: "login",
-      submitButtonLabel: "Login"
+      submitButtonLabel: "Login",
     });
   });
 
@@ -57,13 +57,39 @@ module.exports = function(app) {
       formName: "Sign-up Form",
       formClass: "signup",
       submitButtonLabel: "Sign up",
-      signup: true
+      signup: true,
     });
   });
   //request is from the client
   //request is from the client
   //isAuthenticated middleware: in this route it means If a user is not logged in tries to access this route, they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
+    //backend team needs to query db and get the list of games in the format that the table expects which is an array of objects.
+    // res.status(200);
+    // console.log("WE are in members!!!!!!!!!!!!");
+    // app.get("/api/games", res => {
+    //   debugger;
+    //   res.render("membersIndex", {
+    //     layout: "members",
+    //     email: res.email,
+    //     linkUrl: "/logout",
+    //     linkLabel: "Logout",
+    //     formName: "Member Form",
+    //     formClass: "member",
+    //     addButtonLabel: "Add",
+    //     updateButtonLabel: "Update",
+    //     games: res.games
+    //     // games: [{
+    //     // title: "Genre",
+    //     // publisher: "Publisher",
+    //     // preference: "Preference",
+    //     // rating: "Rating",
+    //     // wishlist: "Wishlist",
+    //     // playing: "Playing",
+    //     // beaten: "Beaten"
+    //     // }]
+    //   });
+    // });
     res.render("membersIndex", {
       layout: "members",
       email: res.email,
@@ -74,7 +100,7 @@ module.exports = function(app) {
       addButtonLabel: "Add",
       updateButtonLabel: "Update",
       games: res.games
-      // games: [
+      // games: [{
       // title: "Genre",
       // publisher: "Publisher",
       // preference: "Preference",
@@ -82,7 +108,7 @@ module.exports = function(app) {
       // wishlist: "Wishlist",
       // playing: "Playing",
       // beaten: "Beaten"
-      // ]
+      // }]
     });
   });
   //games route
@@ -98,7 +124,7 @@ module.exports = function(app) {
       linkLabel: "Logout",
       formName: "Add Form",
       formClass: "add",
-      submitButtonLabel: "submit"
+      submitButtonLabel: "submit",
     });
   });
 
@@ -111,7 +137,7 @@ module.exports = function(app) {
       linkLabel: "Member",
       formName: "Update Form",
       formClass: "update",
-      submitButtonLabel: "submit"
+      submitButtonLabel: "submit",
     });
   });
 };

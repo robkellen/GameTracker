@@ -1,7 +1,7 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  //get all games
+  //get all games from server
   app.get("/api/games", (req, res) => {
     var query = {};
     if (req.query.user) {
@@ -12,9 +12,10 @@ module.exports = function(app) {
       include: [db.User],
     }).then(function(dbGame) {
       res.json(dbGame);
+      // res.render("membersIndex", dbGame);
     });
   });
-  //POST route for adding a new game
+  //POST (send to server) route for adding a new game
   app.post("/api/games", function(req, res) {
     db.Game.create(req.body).then(function(dbGame) {
       res.json(dbGame);
