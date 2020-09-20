@@ -12,15 +12,22 @@
 <body>
     {{> navigation }}
     <h1>Game Tracker</h1>
-    <hr style="color: white; border-top: 1px dotted white; width: 25%;"/>
-      <hr style="color: chartreuse; border-top: 1px dashed chartreuse; width: 50%;"/>
-      <hr style="color: white; border: 1px solid white; width: 75%;"/>
+    <hr style="color: white; border-top: 1px dotted white; width: 25%;" />
+    <hr style="color: chartreuse; border-top: 1px dashed chartreuse; width: 50%;" />
+    <hr style="color: white; border: 1px solid white; width: 75%;" />
+    <q class="text-muted">Keep track of games that you have played, are playing or would like to play with the Game Tracker</q>
     <div class="container">
         <div class="row">
             {{{body}}}
         </div>
     </div>
-
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container d-flex justify-content-center">
+            <!--sticky footer-->
+            <span align="center" ; class="text-muted">&copy; 2020</span>
+            <!--&copy is used to create the copywrite symbol-->
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{!-- matches the partial file name --}}
     {{> script }}
