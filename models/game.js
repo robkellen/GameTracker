@@ -1,3 +1,6 @@
+const GameGenre = require("../models");
+const GameSystem = require("../models");
+
 module.exports = function(sequelize, DataTypes) {
   const Game = sequelize.define("Game", {
     title: {
@@ -18,6 +21,22 @@ module.exports = function(sequelize, DataTypes) {
       },
     },
 
+    genre: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameGenre,
+      //   key: "id"
+      // }
+    },
+
+    system: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameSystem,
+      //   key: "id"
+      // }
+    },
+
     wishlist: {
       type: DataTypes.BOOLEAN,
       default: true,
@@ -34,16 +53,17 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
-  Game.associate = function(models) {
-    Game.belongsToMany(models.Genre, {
-      through: "GameGenre",
-    });
-  };
-  Game.associate = function(models) {
-    Game.belongsToMany(models.System, {
-      through: "GameSystem",
-    });
-  };
+  // Game.associate = function(models) {
+  //   Game.belongsToMany(models.Genre, {
+  //     through: "GameGenre",
+  //   });
+  // };
+  // Game.associate = function(models) {
+  //   Game.belongsToMany(models.System, {
+  //     through: "GameSystem",
+  //   });
+  //   console.log(Systems);
+  // };
 
   Game.associate = function(models) {
     Game.belongsTo(models.User, {

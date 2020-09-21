@@ -25,23 +25,45 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // view engine setup
-app.set("view engine", ".handlebars");
-app.set("views", path.join(__dirname, "views"));
-app.engine(
-  ".handlebars",
-  exphbs({
-    extname: ".handlebars",
-    defaultLayout: "main"
-  })
-);
+app.set('view engine', '.handlebars');
+app.set('views', path.join(__dirname, 'views'));
+app.engine( '.handlebars', exphbs( {
+  extname: '.handlebars',
+  defaultView: 'main',
+  layoutsDir: path.join(__dirname, '/views/layouts/'),
+  partialsDir: path.join(__dirname, '/views/partials/')
+}));
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/game-api-routes.js")(app);
 
+// const axios = require('axios').default;
+
+// function getallgames (){
+
+//   axios({
+//       "method":"GET",
+//       "url":"https://rawg-video-games-database.p.rapidapi.com/games",
+//       "headers":{
+//       "content-type":"application/octet-stream",
+//       "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
+//       "x-rapidapi-key":"5470b880aamsh37bac69440bf26dp130d2djsn9d4d83f96816",
+//       "useQueryString":true
+//       }
+//       })
+//       .then((response)=>{
+//         console.log(response);
+//       })
+//       .catch((error)=>{
+//         console.log(error)
+//       })
+// }
+// getallgames();
+
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
