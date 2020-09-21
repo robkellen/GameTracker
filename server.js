@@ -39,31 +39,10 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/game-api-routes.js")(app);
 
-// const axios = require('axios').default;
 
-// function getallgames (){
-
-//   axios({
-//       "method":"GET",
-//       "url":"https://rawg-video-games-database.p.rapidapi.com/games",
-//       "headers":{
-//       "content-type":"application/octet-stream",
-//       "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
-//       "x-rapidapi-key":"5470b880aamsh37bac69440bf26dp130d2djsn9d4d83f96816",
-//       "useQueryString":true
-//       }
-//       })
-//       .then((response)=>{
-//         console.log(response);
-//       })
-//       .catch((error)=>{
-//         console.log(error)
-//       })
-// }
-// getallgames();
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

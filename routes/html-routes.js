@@ -1,5 +1,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const game = require("../models/game");
 
 //home route
 //request is from the client
@@ -73,16 +74,16 @@ module.exports = function(app) {
       formClass: "member",
       addButtonLabel: "Add",
       updateButtonLabel: "Update",
-      games: res.games
-      // games: [
-      // title: "Genre",
-      // publisher: "Publisher",
-      // preference: "Preference",
-      // rating: "Rating",
-      // wishlist: "Wishlist",
-      // playing: "Playing",
-      // beaten: "Beaten"
-      // ]
+      // games: res.gamesDB.games
+      games: [
+      {title: games.title},
+      {publisher: games.publisher},
+      {preference: games.preference},
+      {rating: games.rating},
+      {wishlist: games.wishlist},
+      {playing: games.playing},
+      {beaten: games.beaten}
+      ]
     });
   });
   //games route
