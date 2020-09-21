@@ -2,3 +2,41 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+h2 {
+  color: rgb(19, 4, 228);
+}
+
+.exampleInputEmail1 {
+  color: rgb(19, 4, 228);
+}
+
+body {
+  color: rgb(19, 4, 228);
+  background-color: black;
+}
+
+html {
+  background-color: black;
+}
+
+.container {
+  background-color: rgb(36, 36, 43);
+  max-width: 500px;
+  border-radius: 25%;
+  border-color: rgb(19, 4, 228);
+  border-style: groove;
+}
+
+.navbar {
+  background-color: black;
+  padding: 0%;
+}
+
+.navbar-default {
+  background-color: black;
+}
+
+form-control {
+  background-color: black;
+}
