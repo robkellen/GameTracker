@@ -6,5 +6,14 @@ $(document).ready(() => {
   });
 });
 $(document).ready(() => {
-  $("#table_id").DataTable();
+  $.get("/api/games", (req, res) => {});
+  $("#table_id").DataTable({
+    
+  });
+  $('.dt-add').each(function () {
+		$(this).on('click', function(e){
+      e.preventDefault();
+			window.location.replace("/games");
+		});
+	});
 });

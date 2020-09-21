@@ -1,3 +1,6 @@
+const GameGenre = require("../models");
+const GameSystem = require("../models");
+
 module.exports = function(sequelize, DataTypes) {
   const Game = sequelize.define("Game", {
     title: {
@@ -5,41 +8,25 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
     },
-    // genre: {
-    //   type: DataTypes.ENUM,
-    //   values: [
-    //     "Action",
-    //     "Adventure",
-    //     "Fighting",
-    //     "Platformer",
-    //     "Racing",
-    //     "RPG",
-    //     "Shooter",
-    //     "Sports",
-    //     "Strategy",
-    //     "Survival/Horror",
-    //   ],
-    // },
+
+    genre: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameGenre,
+      //   key: "id"
+      // }
+    },
     publisher: {
       type: DataTypes.STRING,
     },
-    systemPreference: {
-      type: DataTypes.ENUM,
-      values: [
-        "Android",
-        "iOS",
-        "MacOS",
-        "PC",
-        "Nintendo Switch",
-        "Nintendo Wii",
-        "Nintendo WiiU",
-        "Playstation 3",
-        "Playstation 4",
-        "Xbox ONE",
-        "XBOX 360",
-      ],
-    },
 
+    system: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameSystem,
+      //   key: "id"
+      // }
+    },
     rating: {
       type: DataTypes.INTEGER,
       validate: {
@@ -73,6 +60,7 @@ module.exports = function(sequelize, DataTypes) {
     Game.belongsToMany(models.System, {
       through: "GameSystem",
     });
+    console.log(Systems);
   };
 
   Game.associate = function(models) {
