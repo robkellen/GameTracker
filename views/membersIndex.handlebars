@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Welcome: <span class="">{{email}}</span></h2>
+        </div>
+    </div>
+</div>
+<table id="table_id" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>System</th>
+            <th>Rating</th>
+            <th>Wishlist</th>
+            <th>Playing</th>
+            <th>Beaten</th>
+        </tr>
+    </thead>
+    {{#each games}}
+    <tr>
+        <td>{{title}}</td>
+        <td>{{genre}}</td>
+        <td>{{publisher}}</td>
+        <td>{{system}}</td>
+        <td>{{rating}}</td>
+        <td>{{wishlist}}</td>
+        <td>{{playing}}</td>
+        <td>{{beaten}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>System</th>
+            <th>Rating</th>
+            <th>Wishlist</th>
+            <th>Playing</th>
+            <th>Beaten</th>
+        </tr>
+    </tfoot>
+</table>
