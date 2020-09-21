@@ -76,13 +76,13 @@ module.exports = function(app) {
       updateButtonLabel: "Update",
       // games: res.gamesDB.games
       games: [
-      {title: games.title},
-      {publisher: games.publisher},
-      {preference: games.preference},
-      {rating: games.rating},
-      {wishlist: games.wishlist},
-      {playing: games.playing},
-      {beaten: games.beaten}
+      {title: game.title},
+      {publisher: game.publisher},
+      {preference: game.preference},
+      {rating: game.rating},
+      {wishlist: game.wishlist},
+      {playing: game.playing},
+      {beaten: game.beaten}
       ]
     });
   });
