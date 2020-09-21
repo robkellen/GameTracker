@@ -5,18 +5,26 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
     },
+
+    genre: {
+      type: DataTypes.STRING,
+      unique: false,
+    },
     
     publisher: {
       type: DataTypes.STRING,
     },
+
+    system: {
+      type: DataTypes.STRING,
+      unique: false,
+    },
+    
   
 
     rating: {
       type: DataTypes.INTEGER,
-      validate: {
-        min: 1,
-        max: 10,
-      },
+     
     },
 
     wishlist: {
@@ -35,16 +43,7 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
-  Game.associate = function(models) {
-    Game.belongsToMany(models.Genre, {
-      through: "GameGenre",
-    });
-  };
-  Game.associate = function(models) {
-    Game.belongsToMany(models.System, {
-      through: "GameSystem",
-    });
-  };
+ 
 
   Game.associate = function(models) {
     Game.belongsTo(models.User, {

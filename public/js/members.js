@@ -8,3 +8,11 @@ $(document).ready(() => {
 $(document).ready(() => {
   $("#table_id").DataTable();
 });
+
+$("#addGame").on("click", function (e){
+  e.preventDefault();
+  
+  window.location.replace("../views/layouts/games.handlebars")
+  
+});
+
