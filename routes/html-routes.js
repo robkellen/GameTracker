@@ -1,6 +1,6 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const game = require("../models/game");
+const db = require("../models");
 
 //home route
 //request is from the client
@@ -20,7 +20,7 @@ module.exports = function(app) {
       linkLabel: "Sign-up",
       formName: "Login Form",
       formClass: "login",
-      submitButtonLabel: "Login"
+      submitButtonLabel: "Login",
     });
   });
   // Login Route and also an home route
@@ -38,7 +38,7 @@ module.exports = function(app) {
       linkLabel: "Sign-up",
       formName: "Login Form",
       formClass: "login",
-      submitButtonLabel: "Login"
+      submitButtonLabel: "Login",
     });
   });
 
@@ -58,13 +58,16 @@ module.exports = function(app) {
       formName: "Sign-up Form",
       formClass: "signup",
       submitButtonLabel: "Sign up",
-      signup: true
+      signup: true,
     });
   });
   //request is from the client
   //request is from the client
   //isAuthenticated middleware: in this route it means If a user is not logged in tries to access this route, they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
+  app.get("/members", isAuthenticated, async function (req, res) {
+    const games = await db.Game.findAll({
+      where: {id: req.user.id},
+    });
     res.render("membersIndex", {
       layout: "members",
       email: res.email,
@@ -74,18 +77,20 @@ module.exports = function(app) {
       formClass: "member",
       addButtonLabel: "Add",
       updateButtonLabel: "Update",
-      // games: res.gamesDB.games
-      games: [
-      {title: game.title},
-      {publisher: game.publisher},
-      {preference: game.preference},
-      {rating: game.rating},
-      {wishlist: game.wishlist},
-      {playing: game.playing},
-      {beaten: game.beaten}
-      ]
+      games: games.map((game) => game.toJSON())
+    
+      
     });
+    console.log(games)
   });
+  // app.get("/members", async function (req, res) {
+  //   const games = await db.Games.findAll({
+  //     where: {id: req.user.id},
+  //   });
+  //   res.render("membersIndex",{
+  //     games: games.map((game) => game.toJSON())
+  //   })
+  // }),
   //games route
   //request is from the client
   app.get("/games", isAuthenticated, (req, res) => {
@@ -99,7 +104,7 @@ module.exports = function(app) {
       linkLabel: "Logout",
       formName: "Add Form",
       formClass: "add",
-      submitButtonLabel: "submit"
+      submitButtonLabel: "submit",
     });
   });
 
@@ -112,7 +117,7 @@ module.exports = function(app) {
       linkLabel: "Member",
       formName: "Update Form",
       formClass: "update",
-      submitButtonLabel: "submit"
+      submitButtonLabel: "submit",
     });
   });
 };

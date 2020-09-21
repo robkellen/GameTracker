@@ -29,17 +29,30 @@
         <div class="form-group">
             <label for="exampleInputWishlist">Wishlist</label>
             <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="wishlist" class="form-control" id="wishlist-input" placeholder="Wishlist">
+            <select name="wishlist" id="wishlist">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            {{!-- <input type="wishlist" class="form-control" id="wishlist-input" placeholder="Wishlist"> --}}
         </div>
         <div class="form-group">
             <label for="exampleInputPlaying">Playing</label>
             <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="playing" class="form-control" id="playing-input" placeholder="Playing">
+            <select name="playing" id="playing">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            {{!-- <input type="playing" class="form-control" id="playing-input" placeholder="Playing"> --}}
         </div>
         <div class="form-group">
             <label for="exampleInputBeaten">Beaten</label>
             <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="beaten" class="form-control" id="beaten-input" placeholder="Beaten">
+            <select name="beaten" id="beaten">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            {{!-- <input type="beaten" class="form-control" id="beaten-input" placeholder="Beaten"> --}}
         </div>
+        <br>
         <button type="submit" class="btn btn-default">{{submitButtonLabel}}</button>
         </div>

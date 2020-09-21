@@ -9,24 +9,24 @@ module.exports = function(sequelize, DataTypes) {
       unique: false,
     },
 
-    // genre: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: GameGenre,
-    //     key: "id"
-    //   }
-    // },
+    genre: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameGenre,
+      //   key: "id"
+      // }
+    },
     publisher: {
       type: DataTypes.STRING,
     },
 
-    // system: {
-    //   type: DataTypes.STRING,
-    //   references: {
-    //     model: GameSystem,
-    //     key: "id"
-    //   }
-    // },
+    system: {
+      type: DataTypes.STRING,
+      // references: {
+      //   model: GameSystem,
+      //   key: "id"
+      // }
+    },
     rating: {
       type: DataTypes.INTEGER,
       validate: {

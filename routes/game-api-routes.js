@@ -1,16 +1,22 @@
 const db = require("../models");
 
-module.exports = function(app) {
-  //get all games
-  app.get("/api/games", async function(req, res) {
-    const games = await db.Games.findAll({
-      where: { id: req.user.id },
-    });
-    res.render("membersIndex", {
-      games: games.map((game) => game.toJSON()),
-    });
-  });
 
+
+module.exports = function(app) {
+  
+  //get all games
+  app.get("/api/games", (req, res) => {
+    var query = {};
+    if (req.query.user) {
+      query.UserID = req.query.user_id;
+    }
+    db.Game.findAll({
+      where: query,
+      include: [db.User],
+    }).then(function(dbGame){
+      res.json(dbGame);
+    })
+  });
   //POST route for adding a new game
   app.post("/api/games", function(req, res) {
     db.Game.create(req.body).then(function(dbGame) {

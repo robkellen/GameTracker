@@ -4,8 +4,18 @@ $(document).ready(() => {
   $.get("/api/user_data").then((data) => {
     $(".member-name").text(data.email);
   });
-  
 });
 $(document).ready(() => {
-  $("#table_id").DataTable();
+  $.get("/api/games",(req, res) => {
+    // const games = await db.Game.findAll({
+    //   where: { id: req.user.id },
+    // });
+
+    // res.render("membersIndex", {
+    //   games: games.map((game) => game.toJSON()),
+    // });
+    $("#table_id")
+      .DataTable()
+      ;
+  });
 });
