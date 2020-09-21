@@ -28,11 +28,8 @@ module.exports = function(sequelize, DataTypes) {
       // }
     },
     rating: {
-      type: DataTypes.INTEGER,
-      validate: {
-        min: 1,
-        max: 10,
-      },
+      type: DataTypes.STRING,
+      
     },
 
     wishlist: {
