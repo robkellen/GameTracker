@@ -6,16 +6,14 @@ $(document).ready(() => {
   });
 });
 $(document).ready(() => {
-  $.get("/api/games",(req, res) => {
-    // const games = await db.Game.findAll({
-    //   where: { id: req.user.id },
-    // });
-
-    // res.render("membersIndex", {
-    //   games: games.map((game) => game.toJSON()),
-    // });
-    $("#table_id")
-      .DataTable()
-      ;
+  $.get("/api/games", (req, res) => {});
+  $("#table_id").DataTable({
+    
   });
+  $('.dt-add').each(function () {
+		$(this).on('click', function(e){
+      e.preventDefault();
+			window.location.replace("/games");
+		});
+	});
 });

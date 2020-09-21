@@ -64,9 +64,9 @@ module.exports = function(app) {
   //request is from the client
   //request is from the client
   //isAuthenticated middleware: in this route it means If a user is not logged in tries to access this route, they will be redirected to the signup page
-  app.get("/members", isAuthenticated, async function (req, res) {
+  app.get("/members", isAuthenticated, async function(req, res) {
     const games = await db.Game.findAll({
-      where: {id: req.user.id},
+      where: { id: req.user.id },
     });
     res.render("membersIndex", {
       layout: "members",
@@ -77,20 +77,10 @@ module.exports = function(app) {
       formClass: "member",
       addButtonLabel: "Add",
       updateButtonLabel: "Update",
-      games: games.map((game) => game.toJSON())
-    
-      
+      games: games.map((game) => game.toJSON()),
     });
-    console.log(games)
   });
-  // app.get("/members", async function (req, res) {
-  //   const games = await db.Games.findAll({
-  //     where: {id: req.user.id},
-  //   });
-  //   res.render("membersIndex",{
-  //     games: games.map((game) => game.toJSON())
-  //   })
-  // }),
+
   //games route
   //request is from the client
   app.get("/games", isAuthenticated, (req, res) => {
