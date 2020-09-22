@@ -16,7 +16,7 @@ INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Action", CURRENT_TIMEST
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Adventure", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Fighting", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Platformer", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Racing", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO genres   (name, createdAt, updatedAt) VALUES ("Racing", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("RPG", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Shooter", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO genres (name, createdAt, updatedAt) VALUES ("Sports", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
