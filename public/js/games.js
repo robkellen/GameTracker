@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   //getting references to our form and inputs
   const addForm = $("form.add");
   const titleInput = $("input#title-input");
@@ -24,6 +24,8 @@ $(document).ready(() => {
       beaten: beatenInput.val().trim(),
     };
 
+    console.log(gameData)
+
     if (!gameData.title || !gameData.genre || !gameData.publisher || !gameData.system || !gameData.rating) {
       return;
     }
@@ -39,10 +41,10 @@ $(document).ready(() => {
     playingInput.val("");
     beatenInput.val("");
 
-    //Post to the members route.  If successful we're redirected to the members page.
+    //Post to the games route.  If successful we're redirected to the members page.
     //Otherwise log errors
     function addGame(title, genre, publisher, system, rating, wishlist, playing, beaten) {
-      $.post("/api/games", {
+      $.post("/api/games",  {
         title: title,
         genre: genre,
         publisher: publisher,

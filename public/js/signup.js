@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   // Getting references to our form and input
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");

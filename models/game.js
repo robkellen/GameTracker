@@ -11,10 +11,10 @@ module.exports = function(sequelize, DataTypes) {
 
     genre: {
       type: DataTypes.STRING,
-      // references: {
-      //   model: GameGenre,
-      //   key: "id"
-      // }
+      references: {
+        model: GameGenre,
+        key: "id"
+      }
     },
     publisher: {
       type: DataTypes.STRING,
@@ -22,17 +22,17 @@ module.exports = function(sequelize, DataTypes) {
 
     system: {
       type: DataTypes.STRING,
-      // references: {
-      //   model: GameSystem,
-      //   key: "id"
-      // }
+      references: {
+        model: GameSystem,
+        key: "id"
+      }
     },
     rating: {
-      type: DataTypes.INTEGER,
-      validate: {
-        min: 1,
-        max: 10,
-      },
+      type: DataTypes.STRING,
+      // validate: {
+      //   min: 1,
+      //   max: 10,
+      // },
     },
 
     wishlist: {
@@ -55,20 +55,15 @@ module.exports = function(sequelize, DataTypes) {
     Game.belongsToMany(models.Genre, {
       through: "GameGenre",
     });
-  };
-  Game.associate = function(models) {
     Game.belongsToMany(models.System, {
       through: "GameSystem",
     });
-    console.log(Systems);
-  };
-
-  Game.associate = function(models) {
     Game.belongsTo(models.User, {
       foreignKey: {
         // allowNull: false
       },
     });
   };
+
   return Game;
 };
