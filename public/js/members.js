@@ -16,21 +16,21 @@ $(() => {
   });
 
   //click event for edit button
-  $(".dt-edit").on("click", handleGameEdit); 
+  // $(".dt-edit").on("click", handleGameEdit); 
 
-  function handleGameEdit (){
-    const currentGame = $(this).data.game;
-    window.location.href = "/"
-  }
+  // function handleGameEdit (){
+  //   const currentGame = $(this).data.game;
+  //   window.location.href = "/"
+  // }
 
-  $('.dt-delete').each(function () {
-		$(this).on('click', function(evt){
-			$this = $(this);
-			var dtRow = $this('tr');
-			if(confirm("Are you sure to delete this game?")){
-				var table = $('#table_id').DataTable();
-				table.row(dtRow[0].rowIndex-1).remove().draw( false );
-			}
-    });
-  });
+  // $('.dt-delete').each(function () {
+	// 	$(this).on('click', function(evt){
+	// 		$this = $(this);
+	// 		var dtRow = $this('tr');
+	// 		if(confirm("Are you sure to delete this game?")){
+	// 			var table = $('#table_id').DataTable();
+	// 			table.row(dtRow[0].rowIndex-1).remove().draw( false );
+	// 		}
+  //   });
+  // });
 });

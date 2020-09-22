@@ -53,13 +53,13 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting a game
-  app.delete("/api/games/:id", function(req, res) {
-    db.Game.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function(dbGame) {
-      res.json(dbGame);
-    });
-  });
+  // app.delete("/api/games/:id", function(req, res) {
+  //   db.Game.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then(function(dbGame) {
+  //     res.json(dbGame);
+  //   });
+  // });
 };
