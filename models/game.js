@@ -26,14 +26,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     rating: {
       type: DataTypes.STRING,
-<<<<<<< HEAD
-      
-=======
       // validate: {
       //   min: 1,
       //   max: 10,
       // },
->>>>>>> 7c7debe225f30a763899c593c87cbdd287769d55
     },
 
     wishlist: {
