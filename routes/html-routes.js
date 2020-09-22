@@ -1,6 +1,7 @@
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const http = require("http");
+//require the db from models
+const db = require("../models");
 //home route
 //request is from the client
 module.exports = function(app) {
@@ -57,7 +58,7 @@ module.exports = function(app) {
       formName: "Sign-up Form",
       formClass: "signup",
       submitButtonLabel: "Sign up",
-      signup: true,
+      signup: true
     });
   });
   //request is from the client
