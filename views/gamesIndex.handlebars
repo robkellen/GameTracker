@@ -1,58 +1,82 @@
-        <div class="col-md-6 col-md-offset-3">
-            <h2>{{formName}}</h2>
-            <form class="{{formClass}}">
-        <div class="form-group">
-            <label for="exampleInputTitle">Title</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="title" class="form-control" id="title-input" placeholder="Title">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputGenre">Genre</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="genre" class="form-control" id="genre-input" placeholder="Genre">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPublisher">Publisher</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="publisher" class="form-control" id="publisher-input" placeholder="Publisher">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPreference">System</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="system" class="form-control" id="system-input" placeholder="System">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputRating">Rating</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <input type="rating" class="form-control" id="rating-input" placeholder="Rating">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputWishlist">Wishlist</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <select name="wishlist" id="wishlist">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            {{!-- <input type="wishlist" class="form-control" id="wishlist-input" placeholder="Wishlist"> --}}
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPlaying">Playing</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <select name="playing" id="playing">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            {{!-- <input type="playing" class="form-control" id="playing-input" placeholder="Playing"> --}}
-        </div>
-        <div class="form-group">
-            <label for="exampleInputBeaten">Beaten</label>
-            <hr style="color: white; border-top: 1px dotted white; width: 10%;"/>
-            <select name="beaten" id="beaten">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            {{!-- <input type="beaten" class="form-control" id="beaten-input" placeholder="Beaten"> --}}
-        </div>
-        <br>
-        <button type="submit" class="btn btn-default">{{submitButtonLabel}}</button>
-        </div>
+<div class="col-md-6 col-md-offset-3">
+  <h2>{{formName}}</h2>
+  <form class="{{formClass}}">
+    <div class="form-group">
+      <label for="exampleInputTitle">Title</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <input type="title" class="form-control" id="title-input" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputGenre">Genre</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <select name="genre" id="genre">
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Platformer">Platformer</option>
+        <option value="Racing">Racing</option>
+        <option value="RPG">RPG</option>
+        <option value="Shooter">Shooter</option>
+        <option value="Sports">Sports</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Survival/Horror">Survival/Horror</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPublisher">Publisher</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <input type="publisher" class="form-control" id="publisher-input" placeholder="Publisher">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPreference">System</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <select name="system" id="system">
+        <option value="Android">Android</option>
+        <option value="iOS">iOS</option>
+        <option value="PC">PC</option>
+        <option value="MacOS">MacOS</option>
+        <option value="Switch">Switch</option>
+        <option value="Wii">Wii</option>
+        <option value="WiiU">WiiU</option>
+        <option value="Playstation 3">Playstation 3</option>
+        <option value="Playstation 4">Playstation 4</option>
+        <option value="Xbox ONE">Xbox ONE</option>
+        <option value="Xbox 360">Xbox 360</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputRating">Rating</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <input type="rating" class="form-control" id="rating-input" placeholder="Rating">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputWishlist">Wishlist</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <select name="wishlist" id="wishlist">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      {{!-- <input type="wishlist" class="form-control" id="wishlist-input" placeholder="Wishlist"> --}}
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPlaying">Playing</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <select name="playing" id="playing">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      {{!-- <input type="playing" class="form-control" id="playing-input" placeholder="Playing"> --}}
+    </div>
+    <div class="form-group">
+      <label for="exampleInputBeaten">Beaten</label>
+      <hr style="color: white; border-top: 1px dotted white; width: 10%;" />
+      <select name="beaten" id="beaten">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      {{!-- <input type="beaten" class="form-control" id="beaten-input" placeholder="Beaten"> --}}
+    </div>
+    <br>
+    <button type="submit" class="btn btn-default">{{submitButtonLabel}}</button>
+</div>
+<script src="/js/games.js"></script>

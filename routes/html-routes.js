@@ -66,8 +66,10 @@ module.exports = function(app) {
   //isAuthenticated middleware: in this route it means If a user is not logged in tries to access this route, they will be redirected to the signup page
   app.get("/members", isAuthenticated, async function(req, res) {
     const games = await db.Game.findAll({
-      where: { id: req.user.id },
+      where: { UserId: req.user.id },
+      include: [db.System, db.Genre],
     });
+    
     res.render("membersIndex", {
       layout: "members",
       email: res.email,

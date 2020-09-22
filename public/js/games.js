@@ -1,14 +1,14 @@
-$(document).ready(() => {
+$(() => {
   //getting references to our form and inputs
   const addForm = $("form.add");
   const titleInput = $("input#title-input");
-  const genreInput = $("input#genre-input");
+  const genreInput = $("select#genre");
   const publisherInput = $("input#publisher-input");
-  const systemInput = $("input#system-input");
+  const systemInput = $("select#system");
   const ratingInput = $("input#rating-input");
-  const wishlistInput = $("input#wishlist-input");
-  const playingInput = $("input#playing-input");
-  const beatenInput = $("input#beaten-input");
+  const wishlistInput = $("select#wishlist");
+  const playingInput = $("select#playing");
+  const beatenInput = $("select#beaten");
 
   //when submit button is clicked, we validate that the necessary fields are not blank 
   addForm.on("submit", event => {
@@ -24,12 +24,14 @@ $(document).ready(() => {
       beaten: beatenInput.val().trim(),
     };
 
+    console.log(gameData)
+
     if (!gameData.title || !gameData.genre || !gameData.publisher || !gameData.system || !gameData.rating) {
       return;
     }
 
     //if we have info in necessary inputs, run the addGame function
-    addGame(gameData.title, gameData.genre, gameData.publisher, gameData.system, gameData.rating);
+    addGame(gameData);
     titleInput.val("");
     genreInput.val("");
     publisherInput.val("");
@@ -39,19 +41,10 @@ $(document).ready(() => {
     playingInput.val("");
     beatenInput.val("");
 
-    //Post to the members route.  If successful we're redirected to the members page.
+    //Post to the games route.  If successful we're redirected to the members page.
     //Otherwise log errors
-    function addGame(title, genre, publisher, system, rating, wishlist, playing, beaten) {
-      $.post("/api/games", {
-        title: title,
-        genre: genre,
-        publisher: publisher,
-        system: system,
-        rating: rating,
-        wishlist: wishlist,
-        playing: playing,
-        beaten: beaten
-      }).then(response => {
+    function addGame(game) {
+      $.post("/api/games", game ).then(response => {
         console.log(response);
         window.location.replace("/members");
       })
