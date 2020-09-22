@@ -19,17 +19,9 @@ module.exports = function(sequelize, DataTypes) {
 
     system: {
       type: DataTypes.STRING,
-      // references: {
-      //   model: GameSystem,
-      //   key: "id",
-      // },
     },
     rating: {
       type: DataTypes.STRING,
-      // validate: {
-      //   min: 1,
-      //   max: 10,
-      // },
     },
 
     wishlist: {
@@ -50,15 +42,13 @@ module.exports = function(sequelize, DataTypes) {
 
   Game.associate = function(models) {
     Game.belongsToMany(models.Genre, {
-      through: "GameGenre"
+      through: "GameGenre",
     });
     Game.belongsToMany(models.System, {
-      through: "GameSystem"
+      through: "GameSystem",
     });
     Game.belongsTo(models.User, {
-      foreignKey: {
-        // allowNull: false
-      }
+      foreignKey: {},
     });
   };
 

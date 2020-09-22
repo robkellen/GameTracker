@@ -7,13 +7,14 @@ $(() => {
 });
 $(() => {
   $.get("/api/games", (req, res) => {});
-  $("#table_id").DataTable({
-    
-  });
-  $('.dt-add').each(function () {
-		$(this).on('click', function(e){
+  $("#table_id").DataTable({});
+  $(".dt-add").each(function() {
+    $(this).on("click", function(e) {
       e.preventDefault();
-			window.location.replace("/games");
-		});
-	});
+      window.location.replace("/games");
+    });
+  });
+
+  //click event for edit button
+  $(".dt-edit").on("click", handleGameEdit); 
 });
