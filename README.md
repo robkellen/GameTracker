@@ -40,6 +40,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [Steven Jones](https://github.com/StevenSJones)
 [R.J. Gassner](https://github.com/razzlejazzled)
 [Alfredo Pedroza Hernandez](https://github.com/aphernandez13)
+[Tucker Beauchamp](https://github.com/tuckerbeauchamp)
 
 Please email us to contribute to this project.
 
