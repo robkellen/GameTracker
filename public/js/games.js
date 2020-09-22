@@ -1,4 +1,7 @@
 $(() => {
+ 
+
+
   //getting references to our form and inputs
   const addForm = $("form.add");
   const titleInput = $("input#title-input");
@@ -28,7 +31,9 @@ $(() => {
 
     if (!gameData.title || !gameData.genre || !gameData.publisher || !gameData.system || !gameData.rating) {
       return;
-    }
+    };
+    
+ 
 
     //if we have info in necessary inputs, run the addGame function
     addGame(gameData);
@@ -40,6 +45,7 @@ $(() => {
     wishlistInput.val("");
     playingInput.val("");
     beatenInput.val("");
+  
 
     //Post to the games route.  If successful we're redirected to the members page.
     //Otherwise log errors
@@ -49,11 +55,18 @@ $(() => {
         window.location.replace("/members");
       })
       .catch(handleAddErr);
-    }
+    };
 
     function handleAddErr(err){
       $("alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
-    }
-  })
+    };
+
+    
+  });
+
 });
+ 
+
+
+
