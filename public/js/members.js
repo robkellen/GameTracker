@@ -17,4 +17,9 @@ $(() => {
 
   //click event for edit button
   $(".dt-edit").on("click", handleGameEdit); 
+
+  function handleGameEdit (){
+    const currentGame = $(this).data.game;
+    window.location.href = "/"
+  }
 });
