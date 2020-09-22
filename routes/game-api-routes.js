@@ -15,27 +15,31 @@ module.exports = function(app) {
     });
   });
   //POST route for adding a new game
-  app.post("/api/games", function(req, res) {
-    db.Game.create({
+  app.post("/api/games", async function(req, res) {
+    const dbGame = await db.Game.create({
       title: req.body.title,
       publisher: req.body.publisher,
       rating: req.body.rating,
       wishlist: req.body.wishlist,
       playing: req.body.playing,
       beaten: req.body.beaten,
-      
-    }).then(function(dbGame) {
-      db.System.findOne({
-        where: {
-          name: req.body.system,
-        },
-      }).then(function(dbSystem) {
-        dbGame.addSystem(dbSystem).then(function() {
-          res.json(dbGame);
-        });
-      });
+      UserId: req.user.id,
     });
+    const dbSystem = await db.System.findOne({
+      where: {
+        name: req.body.system,
+      },
+    });
+    const dbGenre = await db.Genre.findOne({
+      where: {
+        name: req.body.genre,
+      },
+    });
+    await dbGame.addSystem(dbSystem);
+    await dbGame.addGenre(dbGenre);
+    res.json(dbGame);
   });
+
   //PUT route for updating a game
   app.put("/api/games", function(req, res) {
     db.Game.update(req.body, {
