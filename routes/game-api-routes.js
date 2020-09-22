@@ -38,6 +38,7 @@ module.exports = function(app) {
     await dbGame.addSystem(dbSystem);
     await dbGame.addGenre(dbGenre);
     res.json(dbGame);
+    console.log(dbGame);
   });
 
   //PUT route for updating a game
@@ -50,4 +51,15 @@ module.exports = function(app) {
       res.json(dbGame);
     });
   });
+
+  // DELETE route for deleting a game
+  // app.delete("/api/games/:id", function(req, res) {
+  //   db.Game.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then(function(dbGame) {
+  //     res.json(dbGame);
+  //   });
+  // });
 };
