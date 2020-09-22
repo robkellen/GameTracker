@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS gamesDB;
+
+USE gamesDB;
+
 INSERT INTO games (title, publisher, rating, createdAt, updatedAt) VALUES ("Grand Theft Auto V", "Rockstar", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO games (title, publisher, rating, createdAt, updatedAt) VALUES ("Halo 3", "Microsoft", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO games (title, publisher, rating, createdAt, updatedAt) VALUES ("Horizon Zero Dawn", "Sony", "9", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
