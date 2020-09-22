@@ -24,7 +24,6 @@ $(() => {
       beaten: beatenInput.val().trim(),
     };
 
-    console.log(gameData)
 
     if (!gameData.title || !gameData.genre || !gameData.publisher || !gameData.system || !gameData.rating) {
       return;
